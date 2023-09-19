@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "not_set",
+    "firebase_url": "not_set",
+    "project_id": "not_set",
+    "storage_bucket": "not_set"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "not_set",
+        "android_client_info": {
+          "package_name": "not_set"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "not_set",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "not_set"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "not_set",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "not_set"
+}

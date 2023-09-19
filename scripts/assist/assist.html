@@ -1,0 +1,197 @@
+<html>
+<header>
+    <style>
+        body,
+        input,
+        button {
+            font-size: 1.2rem;
+
+        }
+    </style>
+</header> 
+
+<body>
+    <h1>Question Form Generator B</h1>
+    <h2 id="status">Ready</h2>
+
+    <label for="file">Drag your Zip</label>
+    <br />
+    <input id="file" type="file" id="myFile" name="Drag or choose your zip">
+    <br />
+    <button id="go">Go</button>
+        <div id="preview" ></div>
+    <script>
+        const SERVER = "http://localhost:3006/"
+
+        function makeFileName(name){
+            console.log(name)
+            if (!name.includes(".svg"))
+            name=name+".svg"
+            return name
+                    .replace(/ /g,"_")
+                    .replace(/-/g,"_")
+                    .replace(/\//g,'_')
+                    .replace(/\&/g,'_')
+                    .toLowerCase()
+        }
+        
+        async function sleep(millis){    
+            return new Promise((r)=>setTimeout(()=>r(),millis))
+        }
+        async function liveServer(){
+
+            var connected=false
+         
+                var ws = new WebSocket(SERVER.replace("http","ws")+"ws");
+				
+                ws.onopen = function() {
+                   
+                   // Web Socket is connected, send data using send()
+                   ws.send("Opened");
+                  console.log("Message is sent...");
+                  connected=true
+                };
+                 
+                ws.onmessage = function (evt) { 
+                   var received_msg = evt.data;
+                   console.log("Message is received...");
+                   location.reload()
+                };
+                 
+                ws.onclose = async function(e) { 
+                   
+                   // websocket is closed.
+                   var serverUP=false;
+                   while(!serverUP)
+                   {  
+                    try {
+                    await fetch(SERVER)
+                    serverUP=true;
+                    }
+                    catch(e){
+
+                    }
+                    await sleep(1000)
+                   }
+                   location.reload()
+                   console.log("Connection is closed...",e); 
+                };
+               
+            
+            console.log("Connected to server")
+
+        }
+       
+        liveServer()
+        async function postData(url = '', data = {}) {
+            //url="http://localhost:8081/index.js"
+           // var xhttp = new XMLHttpRequest();
+           // xhttp.open("GET",url,false);
+            //xhttp.send()
+           //return xhttp.responseText
+            // Default options are marked with *
+           let res=await  fetch(url, {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                //"mode":"no-cors",
+                //mode: 'no-cors', // no-cors, *cors, same-origin
+               // cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                //credentials: 'same-origin', // include, *same-origin, omit
+            
+                headers: {
+                  'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                //redirect: 'follow', // manual, *follow, error
+             //   referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+                body:JSON.stringify( data )// body data type must match "Content-Type" header
+               
+            })
+            return await res.json() // parses JSON response into native JavaScript objects
+        }
+        const status = document.getElementById("status")
+        document.getElementById("go").onclick =async () => {
+            let path=document.getElementById("file").value || localStorage.getItem("recent")
+           if (!path)
+           {
+            alert("Choose a zip first!") 
+            return;
+           } 
+           localStorage.setItem("recent",path) 
+           let res=await postData(SERVER+"zip",{src: path})
+           let preview=document.getElementById("preview")
+           let question=document.createElement("input")
+           question.placeholder="Enter your question here..."
+           preview.appendChild(question)
+          let elems=[]
+           Object.keys(res).forEach(x=>{
+
+            let view=document.createElement("div");
+            view.id=x
+
+                let img=document.createElement("img")
+                let field=document.createElement("input")
+                let fileName=document.createElement("label")
+                elems.push({fileName,field})
+                field.id=x+"input"
+                field.type="text"
+
+                fileName.for=field.id
+                fileName.innerText= makeFileName(x.split("/").slice(-1)[0])
+                
+                img.src=x
+                img.style=`width:200px;height:200px;`
+
+                field.oninput=()=>{
+                    fileName.innerText=makeFileName(field.value)
+                }
+                view.appendChild(img)
+                view.appendChild(field)
+                view.appendChild(fileName)
+                
+
+
+                preview.appendChild(view)
+                 
+           })
+
+           let textArea1=document.createElement("textarea")
+           let textArea2=document.createElement("textarea")
+           textArea1.style="width:50vw;height:50vh"
+           textArea2.style="width:50vw;height:50vh"
+let process=document.createElement("button")
+process.innerText="Process"
+process.onclick=()=>{
+    var payload={}
+    var questionText=question.value
+    payload[questionText]=[]
+
+    var questionOptions=payload[questionText]
+
+    var importBlock="";
+    var formBlock=` "${questionText}" : [`
+    var options=[]
+elems.forEach(elem=>{
+    var {fileName,field}=elem
+    fileName=fileName.innerText
+    field=field.value
+    const varname=fileName.replace(".svg","_svg")
+    importBlock+=`import ${varname} from "res/svgs/${fileName}"\n`
+   options.push(`    { text: "${field}", icon: ${varname} } `)
+   questionOptions.push(fileName)
+})
+formBlock+= options.join(",\n")+"\n     ]"
+textArea1.value=importBlock
+textArea2.value=formBlock
+postData(SERVER+"process",questionOptions).then (x=>alert("Success")).catch(e=>alert("error"+e))
+}
+preview.appendChild(process)
+preview.appendChild(document.createElement("br"))
+           preview.appendChild(textArea1)
+           preview.appendChild(textArea2)
+           
+        }
+    </script>
+
+</body>
+
+</html>

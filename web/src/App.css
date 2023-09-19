@@ -1,0 +1,72 @@
+.App {
+  
+  height:  auto;
+  /* max-height: 80vh; */
+  background-color: #C6F4A9;
+  background-image: linear-gradient(10deg, #C6F4A9 0%, #93F9DA 100%);
+  background-attachment: fixed;
+  width: 100vw; 
+
+    display: flex;
+    flex-direction: column;
+    font-size: calc(10px + 2vmin);
+
+    overflow:visible
+
+
+}
+
+.App-logo {
+  width: 20vw;
+  pointer-events: none;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
+
+/* .App-header {
+ 
+} */
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.backIconSocial {
+  display: block;
+  width: 4.2rem;
+  height: 4.2rem;
+  opacity: 0.4;
+  border-radius: 10.7px;
+  background: #1ce5ff;
+  background: linear-gradient(331deg, #108493 11%, #1ce5ff 89%);
+}
+.modSocial {
+
+  display: flex;
+  flex-direction: row;
+  display: inline-block;
+  margin: 3rem 0;
+  padding: 2rem 1.6rem;
+  border-radius: 16px;
+  box-shadow: 2px 2px 12px 0 rgba(0, 0, 0, 0.5);
+  background-color: #444452;
+}
+.iconSocial {
+  display: block;
+  width: 4.2rem;
+  height: 4.2rem;
+  position: relative;
+}

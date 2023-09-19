@@ -1,0 +1,45 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "res/fonts/Outfit-Black.otf",
+      "sha1": "56edf8c3cf25fe0fd8222af763bde7a2ac63a8a5"
+    },
+    {
+      "path": "res/fonts/Outfit-Bold.otf",
+      "sha1": "90b875bd5249b03f5753d4837687ba2888dee16b"
+    },
+    {
+      "path": "res/fonts/Outfit-ExtraBold.otf",
+      "sha1": "effba6263e6c6ef9954bb469c3fe3dff862865d4"
+    },
+    {
+      "path": "res/fonts/Outfit-ExtraLight.otf",
+      "sha1": "537848f1ce28d18c6c958b23afdf2f549936fc94"
+    },
+    {
+      "path": "res/fonts/Outfit-Light.otf",
+      "sha1": "729cbf180be800c684fc6d66c8b8a7fb3b7d5efd"
+    },
+    {
+      "path": "res/fonts/Outfit-Medium.otf",
+      "sha1": "886674ced9a61e8172b34990293faac746426022"
+    },
+    {
+      "path": "res/fonts/Outfit-Regular.otf",
+      "sha1": "d02bf61b43a1b7654b752028b070bb5b9da8ea42"
+    },
+    {
+      "path": "res/fonts/Outfit-SemiBold.otf",
+      "sha1": "24d7fea6cc0bee78fdd4c1e16816d8ca9f6f7d20"
+    },
+    {
+      "path": "res/fonts/Outfit-Thin.otf",
+      "sha1": "7bb9a1d446a0fa9ab3ca99483f50456b5b2cb744"
+    },
+    {
+      "path": "res/fonts/PTMono-Regular.ttf",
+      "sha1": "adebfdd491cb3bf2ebb92ea23e9ec1ec1608f9bc"
+    }
+  ]
+}

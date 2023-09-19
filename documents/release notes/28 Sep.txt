@@ -1,0 +1,56 @@
+Following things are part of the release:
+
+Introduction of MOCK mode:
+    You do not have to input anything
+    to advance to next screen. 
+    Buttons are enabled by default
+    and you can easily navigate 
+    through the app.
+
+Log out is made simple:
+    Go to menu tab and tap 'Sign out'
+    to get out of application.    
+
+Signup Revised 
+    Text changed "Are you at least
+     18 years old"
+
+    Placement of provider gender 
+    question is changed. 
+
+    Volleyball repitive option 
+    removed.
+    
+    American Football renamed 
+    to Football.
+    
+    Question text changed to 
+    "What is the highest level of 
+    sports you have played?" 
+    ,and options are re-ordered.
+
+    Soccer / Football renamed
+     to Soccer
+    
+    Mental health changed to 
+    Relationship with the icon.
+
+
+Consumer Home
+
+	Tab navigation has been setup,
+     including customizations.
+	
+    Home layout setup
+	
+    Menu layout setup
+	
+    Logout option added
+	
+    Icons and svgs re-engineered
+     to fit the design.  
+	
+    Flickering on navigation
+     removed.
+	
+    Mock data added.

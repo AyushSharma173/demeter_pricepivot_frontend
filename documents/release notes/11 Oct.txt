@@ -1,0 +1,47 @@
+Following things are part of the release:
+
+Introduction of MOCK mode badge:    
+    Now a badge with 'M' in it shows
+    up to indicate mock mode. You 
+    can tap the badge to hide it.
+
+Payment Integration:
+    Stripe has been integrated, now 
+    app users can subscribe to 
+    subscriptions and cancel them
+    if needed.
+
+    Although, this intergation is 
+    now in mock mode, meaning all 
+    the transactions do not
+    collect cash into your 
+    accounts.
+
+Testing Payment:
+    1. Continue with email.
+    2. Enter a random email 
+       address and login
+    3. Goto Menu, and
+       click manage subscriptions
+    4. Now select any subscription 
+       you want and tap
+       'Proceed to Checkout'
+    5. You can continue with 
+       Apple Pay and complete 
+       purchase without any 
+       charges
+    6. Or you can enter following
+       VISA card number 
+       4242 4242 4242 4242
+       and enter any valid 
+       expiry date, CVC
+       and name to proceed.
+    7. Once payment is done you 
+       can see your subscribed 
+       plan.
+    8. You can click on cancel to 
+       cancel a subscription and
+       then buy another one.
+
+
+    

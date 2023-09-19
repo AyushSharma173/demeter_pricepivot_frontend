@@ -1,0 +1,19 @@
+{
+  "name": "proxy",
+  "version": "1.0.0",
+  "description": "A solution to forward metro requests to remote computer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "0.27.2",
+    "chokidar": "3.5.3",
+    "express": "4.18.1",
+    "fsevents": "2.3.2",
+    "twilio": "3.82.1"
+  }
+}

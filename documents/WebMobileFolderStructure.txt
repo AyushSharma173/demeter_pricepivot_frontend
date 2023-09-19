@@ -1,0 +1,10 @@
+web/src
+	AppMobile.tsx
+	core
+	res
+	src
+
+copy .\web\src\AppMobile.tsx .\mobile\AppMobile.tsx
+xcopy /y /E  .\web\src\res\*   .\mobile\res\
+xcopy /y /E  .\web\src\core\*   .\mobile\core\
+xcopy /y /E  .\web\src\src\*   .\mobile\src\

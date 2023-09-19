@@ -1,0 +1,1 @@
+copy /Y ..\refGlobalTypes.ts src\commons\refGlobalTypes.ts  

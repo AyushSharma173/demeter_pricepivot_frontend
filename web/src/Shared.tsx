@@ -1,0 +1,1 @@
+export const APP_SCREENS:Array<{name:string,getComponent:()=>any}>=[]

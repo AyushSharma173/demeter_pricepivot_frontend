@@ -1,0 +1,29 @@
+
+@font-face {
+  font-family: appFont;
+  src: url( '../public/Inter-VariableFont_slnt,wght.ttf');
+}
+@font-face {
+  font-family: Outfit;
+  src: url( '../public/outfit/Outfit-Regular.woff');
+}
+@font-face {
+  font-family: appFontBold;
+  src: url( '../public/outfit/Outfit-SemiBold.woff2');
+}
+body {
+  margin: 0;
+   font-family:  appFont;
+   /*-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;     /*This is done for windows*/
+  color :rgb(39,66,77)
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

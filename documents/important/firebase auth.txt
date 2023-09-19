@@ -1,0 +1,1 @@
+auth!=null && $threadId.replace(auth.uid,'').length != $threadId.length
