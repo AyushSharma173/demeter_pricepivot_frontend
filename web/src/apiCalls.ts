@@ -6,7 +6,8 @@ export function get_recommendations({query}:{query:string}):Promise<IResponse>{
 
     return new Promise(r=>{
 
-        axios.post("http://13.48.130.147:5002/get_recommendations",{
+        axios.post("http://3.18.66.136:5002/get_recommendations",{
+            
             query
         })
         .then(x=>{
